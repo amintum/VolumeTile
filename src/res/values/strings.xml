@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Volume Tile</string>
+    <string name="tile_label">Volume</string>
+    <string name="volume_panel_title">Volume Control</string>
+    <string name="stream_media">Media</string>
+    <string name="stream_ring">Ring &amp; Notification</string>
+    <string name="stream_alarm">Alarm</string>
+    <string name="btn_settings">Sound settings</string>
+    <string name="btn_done">Done</string>
+    <string name="mode_silent">Silent</string>
+    <string name="mode_vibrate">Vibrate</string>
+</resources>

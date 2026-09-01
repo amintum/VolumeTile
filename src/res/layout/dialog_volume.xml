@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_bg"
+        android:padding="16dp">
+
+        <!-- 1. Header Row (VOLUME + [⚙] [✕]) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="VOLUME"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/cyber_cyan"
+                android:letterSpacing="0.05" />
+
+            <!-- [⚙] Settings -->
+            <Button
+                android:id="@+id/btn_settings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/btn_cyber_icon"
+                android:text="⚙"
+                android:textColor="@color/cyber_cyan"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp" />
+
+            <!-- [✕] Close -->
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/btn_cyber_icon"
+                android:text="✕"
+                android:textColor="@color/pure_white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- 2. Sound Mode Chips ([ SOUND ] [ VIBRATE ] [ SILENT ]) -->
+        <LinearLayout
+            android:id="@+id/layout_ringer_modes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <Button
+                android:id="@+id/btn_mode_sound"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="34dp"
+                android:text="SOUND"
+                android:textColor="@color/pure_white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/chip_mode_active"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btn_mode_vibrate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="34dp"
+                android:text="VIBRATE"
+                android:textColor="@color/text_dim"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/chip_mode_normal"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp" />
+
+            <Button
+                android:id="@+id/btn_mode_silent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="34dp"
+                android:text="SILENT"
+                android:textColor="@color/text_dim"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/chip_mode_normal"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- 3. MEDIA Stream Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="♪ MEDIA"
+                    android:textSize="12.5sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/pure_white" />
+
+                <TextView
+                    android:id="@+id/text_media_pct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/cyber_cyan"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Mute Toggle -->
+                <Button
+                    android:id="@+id/btn_mute_media"
+                    android:layout_width="28dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/btn_cyber_icon"
+                    android:text="🔇"
+                    android:textSize="11sp"
+                    android:padding="0dp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekbar_media"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:progressDrawable="@drawable/m3_slider_progress"
+                android:thumb="@drawable/m3_slider_thumb"
+                android:splitTrack="false"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp" />
+        </LinearLayout>
+
+        <!-- 4. RING & NOTIFICATIONS Stream Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🔔 RING &amp; NOTIFICATIONS"
+                    android:textSize="12.5sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/pure_white" />
+
+                <TextView
+                    android:id="@+id/text_ring_pct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/cyber_cyan"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Mute Toggle -->
+                <Button
+                    android:id="@+id/btn_mute_ring"
+                    android:layout_width="28dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/btn_cyber_icon"
+                    android:text="🔇"
+                    android:textSize="11sp"
+                    android:padding="0dp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekbar_ring"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:progressDrawable="@drawable/m3_slider_progress"
+                android:thumb="@drawable/m3_slider_thumb"
+                android:splitTrack="false"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp" />
+        </LinearLayout>
+
+        <!-- 5. Expandable More Container (Calls & Alarm) -->
+        <LinearLayout
+            android:id="@+id/layout_more_sliders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- CALLS Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📞 CALLS"
+                        android:textSize="12.5sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pure_white" />
+
+                    <TextView
+                        android:id="@+id/text_call_pct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/cyber_cyan"
+                        android:layout_marginEnd="8dp" />
+
+                    <Button
+                        android:id="@+id/btn_mute_call"
+                        android:layout_width="28dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/btn_cyber_icon"
+                        android:text="🔇"
+                        android:textSize="11sp"
+                        android:padding="0dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seekbar_call"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:progressDrawable="@drawable/m3_slider_progress"
+                    android:thumb="@drawable/m3_slider_thumb"
+                    android:splitTrack="false"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp" />
+            </LinearLayout>
+
+            <!-- ALARM Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="⏰ ALARM"
+                        android:textSize="12.5sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pure_white" />
+
+                    <TextView
+                        android:id="@+id/text_alarm_pct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/cyber_cyan"
+                        android:layout_marginEnd="8dp" />
+
+                    <Button
+                        android:id="@+id/btn_mute_alarm"
+                        android:layout_width="28dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/btn_cyber_icon"
+                        android:text="🔇"
+                        android:textSize="11sp"
+                        android:padding="0dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seekbar_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:progressDrawable="@drawable/m3_slider_progress"
+                    android:thumb="@drawable/m3_slider_thumb"
+                    android:splitTrack="false"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 6. Bottom Row (Expand / Collapse Button) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="2dp">
+
+            <Button
+                android:id="@+id/btn_toggle_more"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="⌄ MORE SLIDERS"
+                android:textColor="@color/cyber_cyan"
+                android:textSize="10.5sp"
+                android:textStyle="bold"
+                android:background="@drawable/chip_mode_normal"
+                android:padding="0dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
