@@ -9,21 +9,8 @@ A futuristic **Cyberpunk HUD Volume Control Quick Settings Tile** for Android. C
 
 ## 🎨 Visual Preview
 
-```text
-◤━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◥
-┃  VOLUME                                          [⚙]  [✕]   ┃
-┃                                                             ┃
-┃  [ SOUND ]           [ VIBRATE ]           [ SILENT ]       ┃
-┃                                                             ┃
-┃  ♪ MEDIA                                    27%       [🔇]  ┃
-┃  ▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱                                     ┃
-┃                                                             ┃
-┃  🔔 RING & NOTIFICATIONS                   100%       [🔇]  ┃
-┃  ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰                                    ┃
-┃                                                             ┃
-┃  [ ⌄ MORE SLIDERS (Calls & Alarm) ]                         ┃
-◣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◢
-```
+<img width="979" height="908" alt="image" src="https://github.com/user-attachments/assets/f62a1c6e-9144-4d04-a46a-548c558fc8a3" />
+
 
 ---
 
